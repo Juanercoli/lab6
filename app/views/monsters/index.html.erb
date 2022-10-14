@@ -1,1 +1,21 @@
-<%# Update me %><%= @monsters.inspect %>
+<h1>Tabla de monstruos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Atributos</th>
+            <th>Contenido</th>
+            <th>Opcion adicional</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @monsters.each do |monster| %>
+            <tr>
+                <td><%= monster.name %></td>
+                <td class="atributo-destacado"><%= es_tuitero_destacado(monster) %></td>
+                <td><%= link_to "Perfil", monster, class: "btn btn-dark" %></td>
+                <td><%= link_to "Eliminar", monster, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Estas seguro?" } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

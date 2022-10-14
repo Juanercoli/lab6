@@ -1,6 +1,6 @@
-<%= form_with model: tweet do |f| %>
-  <%= f.collection_select :monster_id, Monster.order(:name), :id, :name, {}, { class: "form-select mb-2" } %>
-  <%= f.text_area :content, placeholder: "¿Qué está pasando?", class: "form-control mb-2" %>
-
-  <%= f.submit "Twittear", class: "btn btn-primary mb-2" %>
+<%= simple_form_for @tweet do |t| %>
+  <%= t.association :monster, collection: Monster.order(:name), prompt: "Elegi con que monstruo twittear"%>
+  <%= t.input :content %>
+  
+  <%= t.button :submit %>
 <% end %>

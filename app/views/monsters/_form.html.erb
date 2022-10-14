@@ -1,0 +1,8 @@
+<%= simple_form_for @monster do |m| %>
+    <%= m.input :name%>
+    <%= m.input :description %>
+    <%= m.input :phone %>
+    <%= m.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                            end_year: Date.today.year - 14 %>
+    <%= m.button :submit %>
+<% end %>

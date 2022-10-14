@@ -1,1 +1,22 @@
-<%# Update me %><%= @monster.inspect %>
+<%# Utilizo un helper para setear title%>
+<% set_page_title @monster.name %>
+
+<div class="grid text-start">
+    <div class="g-col">
+        <%= render "profile", monster: @monster %>
+    </div>
+
+    <% @tweets = Tweet.where(monster_id: @monster.id) %>
+    <% if @tweets.count > 0 %>
+        <div class="gcolesScrolleable text-bg-danger p-3 shadow-lg rounded">
+            <h1>Lista de tweets</h1>
+                <% @tweets.each do |tweet| %>
+                    <%= print_tweet(@monster, tweet) %>
+                <% end %>
+        </div>
+    <% else %>
+        <div class="g-col text-bg-danger p-3 shadow-lg rounded">
+            <h1> No hay tweets disponibles.</h1>
+        </div>
+    <% end %>
+</div>

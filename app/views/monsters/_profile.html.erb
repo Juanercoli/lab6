@@ -1,0 +1,13 @@
+<div class="card shadow-lg mb-2" style="width: 18rem;">
+    <img src="https://thumbs.dreamstime.com/b/cute-hairy-monster-17252697.jpg" class="card-img-top mx-auto" style="max-width: 200px" alt="Imagen no encontrada">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= monster.name %>
+        </h5>
+        <p class="card-text">
+            <%= monster.description %>
+        </p>
+        <%= link_to "Volver atras", root_path, class: "btn btn-dark" %>
+        <%= link_to "Eliminar cuenta", @monster, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Estas seguro?" } %>
+    </div>
+</div>
