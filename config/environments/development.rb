@@ -59,6 +59,8 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.hosts << "3000-juanercoli-lab6-jzzwolsb49p.ws-us72.gitpod.io"
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

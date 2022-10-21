@@ -1,3 +1,9 @@
 <h2 class="py-2 mb-0">Tweet</h2>
 
 <%= render @tweet %>
+<%= 
+link_to "Imprimir", 
+"#",
+class: "btn btn-danger d-print-none",
+onclick: "window.print()" 
+%>
